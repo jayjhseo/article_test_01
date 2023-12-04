@@ -1,5 +1,8 @@
-package com.test01.sbbtest_01;
+package com.test01.sbbtest_01.article;
 
+import com.test01.sbbtest_01.article.Article;
+import com.test01.sbbtest_01.article.ArticleRepository;
+import com.test01.sbbtest_01.user.SiteUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +14,11 @@ import java.util.Optional;
 public class ArticleService {
     private final ArticleRepository articleRepository;
 
-    public void create(String title, String content) {
+    public void create(String title, String content, SiteUser user) {
         Article a = new Article();
         a.setTitle(title);
         a.setContent(content);
+        a.setAuthor(user);
         this.articleRepository.save(a);
     }
 

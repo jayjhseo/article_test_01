@@ -1,5 +1,6 @@
-package com.test01.sbbtest_01;
+package com.test01.sbbtest_01.article;
 
+import com.test01.sbbtest_01.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,4 +17,6 @@ public class Article {
     private String title;
     @Column(columnDefinition = "TEXT")
     private String content;
+    @ManyToOne
+    private SiteUser author;
 }
