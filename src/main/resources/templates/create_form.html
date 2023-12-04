@@ -1,0 +1,14 @@
+<html layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <form th:object="${articleForm}" method="post">
+            <div th:replace="~{error_form :: formErrorsFragment}"></div>
+            제목: <input type="text" name="title" th:fields="*{title}" >
+            <br>
+            내용: <textarea name="content" id="" th:fields="*{content}" cols="30" rows="10"></textarea>
+            <button type="submit">등록</button>
+        </form>
+    </div>
+</html>
+
+
+
